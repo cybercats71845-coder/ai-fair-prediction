@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fare Calculation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>📊 Fare Calculation Details</h2>
+  <div id="calc" style="background:#f9f9f9; padding:20px; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.15);"></div>
+  <a href="index.html">⬅ Back to Prediction</a>
+</div>
+
+<script>
+let w = localStorage.getItem("weight");
+let r = localStorage.getItem("rain") === "true";
+let t = localStorage.getItem("traffic");
+let f = localStorage.getItem("fare");
+
+document.getElementById("calc").innerHTML =
+  "<b>Base Fare:</b> ₹50<br>" +
+  "<b>Weight Cost:</b> " + w + " × 2 = ₹" + (w*2) + "<br>" +
+  "<b>Rain Charge:</b> ₹" + (r ? 20 : 0) + "<br>" +
+  "<b>Traffic Charge:</b> ₹" +
+  (t=="high"?30:t=="medium"?15:0) +
+  "<br><br><b>Total Fare:</b> ₹" + f;
+</script>
+
+</body>
+</html>
