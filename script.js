@@ -83,7 +83,7 @@ function drawChart(weight, rain, traffic, fare) {
       datasets: [{
         data: [
           50,
-          weight*2,
+          weight,
           rain ? 20 : 0,
           traffic==="high" ? 30 : traffic==="medium" ? 15 : 0,
           fare
@@ -99,4 +99,5 @@ function drawChart(weight, rain, traffic, fare) {
 window.addEventListener("load", () => {
   const weight = localStorage.getItem("weight");
   if (weight) document.getElementById("weight").value = weight;
+
 });
